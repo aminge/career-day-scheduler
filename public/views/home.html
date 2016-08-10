@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
 <head>
-    <title>Goal Tracker</title>
+    <title>Career Day Scheduler</title>
 
     <script type="text/javascript" src="/vendors/angular.min.js"></script>
     <script type="text/javascript" src="/vendors/angular-route.min.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/factories/dataFactory.js"></script>
-    <script type="text/javascript" src="/scripts/controllers/newGoalController.js"></script>
-    <script type="text/javascript" src="/scripts/controllers/goalsController.js"></script>
-    <script type="text/javascript" src="/scripts/controllers/tasksController.js"></script>
-    <script type="text/javascript" src="/scripts/controllers/completeGoalsController.js"></script>
-    <script type="text/javascript" src="/scripts/controllers/editGoalController.js"></script>
-    <script type="text/javascript" src="/scripts/controllers/signInController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/recruiterController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/studentController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/scheduleController.js"></script>
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 
@@ -25,9 +22,9 @@
 <div class="container">
     <nav class="twelve columns">
         <ul>
-            <a href="#goals"><li>Current Goals</li></a>
-            <a href="#newGoal"><li>New Goal</li></a>
-            <a href="#completeGoals"><li>Completed Goals</li></a>
+            <a href="#student"><li>Students</li></a>
+            <a href="#recruiter"><li>Recruiters</li></a>
+            <a href="#schedule"><li>Schedules</li></a>
         </ul>
     </nav>
 
