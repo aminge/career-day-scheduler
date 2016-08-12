@@ -1,8 +1,23 @@
-myApp.controller('CompleteGoalsController', ['$scope', 'DataFactory', function($scope, DataFactory) {
+myApp.controller('StudentController', ['$scope', 'DataFactory', function($scope, DataFactory) {
 
   $scope.dataFactory = DataFactory;
 
-  $scope.students = $scope.dataFactory.publicGetStudents()
+  $scope.addStudent = function() {
+    var newStudent = {
+      name: $scope.name,
+      cohort: $scope.cohort,
+      email: $scope.email
+    };
 
+    $scope.dataFactory.publicSubmitStudent(newStudent);
+
+    $scope.name = '';
+    $scope.cohort = '';
+    $scope.email = '';
+  };
+
+  $scope.dataFactory.publicGetAllStudents().then(function() {
+    $scope.students = $scope.dataFactory.publicStudentsArray();
+  });
 
 }]);
