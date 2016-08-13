@@ -8,7 +8,7 @@ myApp.controller('NewScheduleController', ['$scope', 'DataFactory', function($sc
   };
 
   $scope.generateSchedule = function() {
-    var newSchedue = {
+    var scheduleInfo = {
       name: $scope.name,
       cohort: $scope.cohort,
       numberOfInterviews: $scope.numberOfInterviews,
@@ -18,7 +18,7 @@ myApp.controller('NewScheduleController', ['$scope', 'DataFactory', function($sc
       recruiters: $scope.recruiterList
     };
 
-    $scope.dataFactory.publicSaveSchedule(newSchedue);
+    $scope.dataFactory.publicSaveSchedule(scheduleInfo);
   };
 
 
