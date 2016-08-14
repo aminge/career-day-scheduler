@@ -1,0 +1,69 @@
+CREATE TABLE cohorts (
+  name varchar(160) PRIMARY KEY
+);
+
+CREATE TABLE students (
+  id serial PRIMARY KEY,
+  name varchar(160) NOT NULL,
+  email varchar(160),
+  cohort varchar(160) REFERENCES cohorts (name)
+);
+
+CREATE TABLE recruiters (
+  id serial PRIMARY KEY,
+  name varchar(160) NOT NULL,
+  email varchar(160),
+  company varchar(160)
+);
+
+CREATE TABLE events (
+  id serial PRIMARY KEY,
+  name varchar(160),
+  cohort_name integer REFERENCES cohorts (name)
+);
+
+CREATE TABLE attendees (
+  recruiter_id integer REFERENCES recruiters (id),
+  event_id integer REFERENCES events (id)
+);
+
+CREATE TABLE schedules (
+  id serial PRIMARY KEY,
+  event_id integer REFERENCES events (id)
+);
+
+CREATE TABLE interviews (
+  student_id integer REFERENCES students (id),
+  recruiter_id integer REFERENCES recruiters (id),
+  schedule_id integer REFERENCES schedules (id),
+  start_time time
+);
+
+INSERT INTO cohorts (name) VALUES ('Iota');
+
+INSERT INTO students (name, cohort_name) VALUES ('Alex Minge', 'Iota');
+INSERT INTO students (name, cohort_name) VALUES ('Andrew Glenn', 'Iota');
+INSERT INTO students (name, cohort_name) VALUES ('Andy Fehrenbach', 'Iota');
+INSERT INTO students (name, cohort_name) VALUES ('Annette Tousley', 'Iota');
+INSERT INTO students (name, cohort_name) VALUES ('Kati Lueth', 'Iota');
+INSERT INTO students (name, cohort_name) VALUES ('Josh Sternberg', 'Iota');
+INSERT INTO students (name, cohort_name) VALUES ('Kailey Colestock', 'Iota');
+INSERT INTO students (name, cohort_name) VALUES ('Juan Ball', 'Iota');
+INSERT INTO students (name, cohort_name) VALUES ('Luis de la Espriella', 'Iota');
+INSERT INTO students (name, cohort_name) VALUES ('John Rauchy', 'Iota');
+INSERT INTO students (name, cohort_name) VALUES ('Gwen Williams', 'Iota');
+INSERT INTO students (name, cohort_name) VALUES ('Moni Francesca', 'Iota');
+INSERT INTO students (name, cohort_name) VALUES ('Caitlin Collins', 'Iota');
+INSERT INTO students (name, cohort_name) VALUES ('Bennett Batzli', 'Iota');
+INSERT INTO students (name, cohort_name) VALUES ('Kat Traxler', 'Iota');
+INSERT INTO students (name, cohort_name) VALUES ('Savio Nguyen', 'Iota');
+INSERT INTO students (name, cohort_name) VALUES ('Anthony Macki', 'Iota');
+INSERT INTO students (name, cohort_name) VALUES ('Remy Allen', 'Iota');
+
+INSERT INTO recruiters (name, company) VALUES ('Bob', 'Digital People'),
+                                              ('Ted', 'Aquent'),
+                                              ('Kara', 'Robert Half'),
+                                              ('Kirk', 'TapQA'),
+                                              ('Kelly', 'Experis'),
+                                              ('Heather', 'Logisolve'),
+                                              ('Erik', 'Robert Half');
