@@ -5,10 +5,14 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-
-
 app.use('/', index);
+app.use('/data', dataRoute);
 
+app.use(express.static('public'));
+app.use(express.static('public/views'));
+app.use(express.static('public/scripts'));
+app.use(express.static('public/styles'));
+app.use(express.static('public/vendors'));
 
 app.set('port', process.env.PORT || 3000);
 
