@@ -8,10 +8,16 @@ myApp.factory('DataFactory', ['$http', function($http) {
   var currentSchedule = undefined;
 
   var privateGetAllRecruiters = function() {
-
+    var promise = $http.get('/data/recruiters').then(function(response) {
+      recruiters = response.data;
+    });
+    return promise;
   };
   var privateGetAllStudents = function() {
-
+    var promise = $http.get('/data/students').then(function(response) {
+      students = response.data;
+    });
+    return promise;
   };
   var privateGetSchedules = function() {
 
