@@ -6,6 +6,8 @@ myApp.factory('DataFactory', ['$http', function($http) {
   var students = undefined;
   var schedules = undefined;
   var currentSchedule = undefined;
+  var currentCohort = undefined;
+  var studentsFromCurrentCohort = undefined;
 
   var privateGetAllRecruiters = function() {
     var promise = $http.get('/data/recruiters').then(function(response) {
@@ -20,19 +22,31 @@ myApp.factory('DataFactory', ['$http', function($http) {
     return promise;
   };
   var privateGetSchedules = function() {
-
+    // should this just get the schedules from a particular cohort?
   };
   var privateGetStudentsFromCohort = function(cohort) {
 
   };
   var privateSubmitStudent = function(student) {
-
+    var promise = $http.put('/data/student', student).then(function(response) {
+      // make sure to send back all of the students from the server
+      students = response.data;
+    });
+    return promise;
   };
   var privateSubmitRecruiter = function(recruiter) {
-
+    var promise = $http.put('/data/recruiter', recruiter).then(function(response) {
+      // make sure to send back all of the recruiters from the server
+      recruiters = response.data;
+    });
+    return promise;
   };
   var privateSaveSchedule = function(schedule) {
-
+    var promise = $http.put('/data/schedule', schedule).then(function(response) {
+      // make sure to send back all of the recruiters from the server
+      schedules = response.data;
+    });
+    return promise;
   };
   var privateSetCurrentSchedule = function(schedule) {
     currentSchedule = schedule;
@@ -55,7 +69,7 @@ myApp.factory('DataFactory', ['$http', function($http) {
       return privateGetSchedules();
     },
     publicGetStudentsFromCohort: function(cohort) {
-      return privateGetStudentsFromCohort(cohort)
+      return privateGetStudentsFromCohort(cohort);
     },
     publicRecruitersArray: function() {
       return recruiters;
