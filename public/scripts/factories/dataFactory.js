@@ -2,6 +2,7 @@ myApp.factory('DataFactory', ['$http', function($http) {
 
   // PRIVATE
 
+  var events = undefined;
   var recruiters = undefined;
   var students = undefined;
   var schedules = undefined;
@@ -15,18 +16,29 @@ myApp.factory('DataFactory', ['$http', function($http) {
     });
     return promise;
   };
+
   var privateGetAllStudents = function() {
     var promise = $http.get('/data/students').then(function(response) {
       students = response.data;
     });
     return promise;
   };
+
   var privateGetSchedules = function() {
     // should this just get the schedules from a particular cohort?
   };
+
   var privateGetStudentsFromCohort = function(cohort) {
 
   };
+
+  var privateSubmitEvent = function(event) {
+    var promise = $http.put('/data/event', event).then(function(response) {
+      events = response.data;
+    });
+    return promise;
+  };
+
   var privateSubmitStudent = function(student) {
     var promise = $http.put('/data/student', student).then(function(response) {
       // make sure to send back all of the students from the server
@@ -34,6 +46,7 @@ myApp.factory('DataFactory', ['$http', function($http) {
     });
     return promise;
   };
+
   var privateSubmitRecruiter = function(recruiter) {
     var promise = $http.put('/data/recruiter', recruiter).then(function(response) {
       // make sure to send back all of the recruiters from the server
@@ -41,6 +54,7 @@ myApp.factory('DataFactory', ['$http', function($http) {
     });
     return promise;
   };
+
   var privateSaveSchedule = function(schedule) {
     var promise = $http.put('/data/schedule', schedule).then(function(response) {
       // make sure to send back all of the recruiters from the server
@@ -48,6 +62,7 @@ myApp.factory('DataFactory', ['$http', function($http) {
     });
     return promise;
   };
+
   var privateSetCurrentSchedule = function(schedule) {
     currentSchedule = schedule;
   };
@@ -80,14 +95,17 @@ myApp.factory('DataFactory', ['$http', function($http) {
     publicSetCurrentSchedule: function(schedule) {
       return privateSetCurrentSchedule(schedule);
     },
-    publicSubmitRecruiter: function(recruiter) {
-      return privateSubmitRecruiter(recruiter);
-    },
     publicSaveSchedule: function(schedule) {
       return privateSaveSchedule(schedule);
     },
     publicStudentsArray: function() {
       return students;
+    },
+    submitEvent: function(event) {
+      return privateSubmitEvent(event);
+    },
+    submitRecruiter: function(recruiter) {
+      return privateSubmitRecruiter(recruiter);
     },
     publicSubmitStudent: function(student) {
       return privateSubmitStudent(student);

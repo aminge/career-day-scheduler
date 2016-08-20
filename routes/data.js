@@ -19,6 +19,14 @@ router.get('/students/:cohortID', function(req, res) {
 
 });
 
+router.put('/event', function(req, res) {
+  var event = {
+    name: req.name,
+    startTime: req.startTime
+    // I need to make sure this is getting passed in on the front end
+  };
+});
+
 router.put('/recruiter', function(req, res) {
 
 });

@@ -9,7 +9,7 @@ myApp.controller('RecruiterController', ['$scope', 'DataFactory', function($scop
       email: $scope.email
     };
 
-    $scope.dataFactory.publicSubmitRecruiter(newRecruiter);
+    $scope.dataFactory.submitRecruiter(newRecruiter);
 
     $scope.name = '';
     $scope.company = '';
