@@ -16,7 +16,7 @@ router.get('/students', function(req, res) {
 });
 
 router.get('/students/:cohortID', function(req, res) {
-
+  var cohortID = req.cohortID;
 });
 
 router.put('/event', function(req, res) {
@@ -28,14 +28,22 @@ router.put('/event', function(req, res) {
 });
 
 router.put('/recruiter', function(req, res) {
-
+  var recruiter = {
+    name: req.name,
+    email: req.email,
+    company: req.company
+  };
 });
 
 router.put('/schedule', function(req, res) {
-
+  // I will probably outsource this functionality to another file
 });
 
 router.put('/student', function(req, res) {
-
+  var student = {
+    name: req.name,
+    email: req.email,
+    company: req.company
+  }
 });
 
