@@ -5,8 +5,8 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use('/', index);
-app.use('/data', dataRoute);
+//app.use('/', index);
+//app.use('/data', dataRoute);
 
 app.use(express.static('public'));
 app.use(express.static('public/views'));

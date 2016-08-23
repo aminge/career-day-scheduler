@@ -5,10 +5,18 @@ myApp.factory('DataFactory', ['$http', function($http) {
   var events = undefined;
   var recruiters = undefined;
   var students = undefined;
+  var cohorts = undefined;
   var schedules = undefined;
   var currentSchedule = undefined;
   var currentCohort = undefined;
   var studentsFromCurrentCohort = undefined;
+
+  var privateGetAllCohorts = function() {
+    var promise = $http.get('/data/cohorts').then(function(response) {
+      cohorts = response.data;
+    });
+    return promise;
+  };
 
   var privateGetAllRecruiters = function() {
     var promise = $http.get('/data/recruiters').then(function(response) {
@@ -71,34 +79,40 @@ myApp.factory('DataFactory', ['$http', function($http) {
   // PUBLIC
 
   var publicAPI = {
-    publicGetAllRecruiters: function() {
+    getAllCohorts: function() {
+      return privateGetAllCohorts();
+    },
+    getAllRecruiters: function() {
       return privateGetAllRecruiters()
     },
-    publicGetAllStudents: function() {
+    getAllStudents: function() {
       return privateGetAllStudents();
     },
-    publicGetCurrentSchedule: function() {
+    cohortsArray: function() {
+      return cohorts;
+    },
+    getCurrentSchedule: function() {
       return currentSchedule;
     },
-    publicGetSchedules: function() {
+    getSchedules: function() {
       return privateGetSchedules();
     },
     publicGetStudentsFromCohort: function(cohort) {
       return privateGetStudentsFromCohort(cohort);
     },
-    publicRecruitersArray: function() {
+    recruitersArray: function() {
       return recruiters;
     },
-    publicSchedulesArray: function() {
+    schedulesArray: function() {
       return schedules;
     },
     publicSetCurrentSchedule: function(schedule) {
       return privateSetCurrentSchedule(schedule);
     },
-    publicSaveSchedule: function(schedule) {
+    saveSchedule: function(schedule) {
       return privateSaveSchedule(schedule);
     },
-    publicStudentsArray: function() {
+    studentsArray: function() {
       return students;
     },
     submitEvent: function(event) {
@@ -107,7 +121,7 @@ myApp.factory('DataFactory', ['$http', function($http) {
     submitRecruiter: function(recruiter) {
       return privateSubmitRecruiter(recruiter);
     },
-    publicSubmitStudent: function(student) {
+    submitStudent: function(student) {
       return privateSubmitStudent(student);
     }
   };

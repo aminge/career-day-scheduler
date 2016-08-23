@@ -18,7 +18,7 @@ myApp.controller('NewScheduleController', ['$scope', 'DataFactory', function($sc
       recruiters: $scope.recruiterList
     };
 
-    $scope.dataFactory.publicSaveSchedule(scheduleInfo);
+    $scope.dataFactory.saveSchedule(scheduleInfo);
   };
 
 

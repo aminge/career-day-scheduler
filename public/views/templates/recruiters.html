@@ -1,0 +1,32 @@
+<h2>Recruiters</h2>
+
+<table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Company</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+
+    <tbody ng-repeat="recruiter in recruiters">
+      <tr>
+        <td>{{recruiter.name}}</td>
+        <td>{{recruiter.company}}</td>
+        <td>{{recruiter.email}}</td>
+      </tr>
+    </tbody>
+</table>
+
+<form>
+    <label for="name">Name:</label>
+    <input type="text" ng-model="name" id="name" />
+    <label for="company">Company:</label>
+    <input type="text" ng-model="company" id="company" />
+    <label for="email">Email:</label>
+    <input type="text" ng-model="email" id="email" />
+
+    <button id="add-recruiter" ng-click="addRecruiter()">Add Recruiter</button>
+
+
+</form>

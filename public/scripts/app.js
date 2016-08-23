@@ -3,13 +3,13 @@ var myApp = angular.module('myApp', ['ngRoute']);
 myApp.config(['$routeProvider', function($routeProvider) {
 
   $routeProvider
-    .when('/recruiter', {
-      templateUrl: '/views/templates/recruiter.html',
-      controller: 'RecruiterController'
+    .when('/recruiters', {
+      templateUrl: '/views/templates/recruiters.html',
+      controller: 'RecruitersController'
     })
-    .when('/student', {
-      templateUrl: '/views/templates/student.html',
-      controller: 'StudentController'
+    .when('/students', {
+      templateUrl: '/views/templates/students.html',
+      controller: 'StudentsController'
     })
     .when('/newSchedule', {
       templateUrl: '/views/templates/newSchedule.html',
@@ -24,6 +24,6 @@ myApp.config(['$routeProvider', function($routeProvider) {
       controller: 'ViewScheduleController'
     })
     .otherwise({
-      redirectTo: 'student'
+      redirectTo: 'students'
     });
 }]);

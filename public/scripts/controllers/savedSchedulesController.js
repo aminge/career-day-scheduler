@@ -2,8 +2,8 @@ myApp.controller('SavedSchedulesController', ['$scope', 'DataFactory', function(
 
   $scope.dataFactory = DataFactory;
 
-  $scope.dataFactory.publicGetSchedules().then(function() {
-    $scope.schedules = $scope.dataFactory.publicSchedulesArray();
+  $scope.dataFactory.getSchedules().then(function() {
+    $scope.schedules = $scope.dataFactory.schedulesArray();
   });
 
 }]);

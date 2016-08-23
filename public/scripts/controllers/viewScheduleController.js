@@ -2,6 +2,6 @@ myApp.controller('ViewScheduleController', ['$scope', 'DataFactory', function($s
 
   $scope.dataFactory = DataFactory;
 
-  $scope.currentSchedule = $scope.dataFactory.publicGetCurrentSchedule();
+  $scope.currentSchedule = $scope.dataFactory.getCurrentSchedule();
 
 }]);

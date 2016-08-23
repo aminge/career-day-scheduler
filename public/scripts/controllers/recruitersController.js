@@ -1,4 +1,4 @@
-myApp.controller('RecruiterController', ['$scope', 'DataFactory', function($scope, DataFactory) {
+myApp.controller('RecruitersController', ['$scope', 'DataFactory', function($scope, DataFactory) {
 
   $scope.dataFactory = DataFactory;
 
@@ -16,8 +16,8 @@ myApp.controller('RecruiterController', ['$scope', 'DataFactory', function($scop
     $scope.email = '';
   };
 
-  $scope.dataFactory.publicGetAllRecruiters().then(function() {
-    $scope.recruiters = $scope.dataFactory.publicRecruitersArray();
+  $scope.dataFactory.getAllRecruiters().then(function() {
+    $scope.recruiters = $scope.dataFactory.recruitersArray();
   });
 
 }]);
