@@ -5,14 +5,65 @@ var connectionString = require('./connect');
 
 router.get('/cohorts', function(req, res) {
 
+  var cohorts = [];
+
+  pg.connect(connectionString, function(err, client, done) {
+    var query = client.query('SELECT * FROM cohorts');
+
+    query.on('row', function(row) {
+      cohorts.push(row);
+      // console.log(row);
+    });
+    query.on('end', function() {
+      done();
+      return res.json(cohorts);
+    });
+    if(err) {
+      console.log(err);
+    }
+  });
 });
 
 router.get('/recruiters', function(req, res) {
+  var recruiters = [];
 
+  pg.connect(connectionString, function(err, client, done) {
+    var query = client.query('SELECT * FROM recruiters');
+
+    query.on('row', function(row) {
+      recruiters.push(row);
+      // console.log(row);
+    });
+    query.on('end', function() {
+      done();
+      return res.json(recruiters);
+    });
+    if(err) {
+      console.log(err);
+    }
+  });
 });
 
 router.get('/students', function(req, res) {
 
+  var cohort = req.body.cohort;
+  var students = [];
+
+  pg.connect(connectionString, function(err, client, done) {
+    var query = client.query('SELECT * FROM goals WHERE cohort = $1', [cohort]);
+
+    query.on('row', function(row) {
+      students.push(row);
+      // console.log(row);
+    });
+    query.on('end', function() {
+      done();
+      return res.json(students);
+    });
+    if(err) {
+      console.log(err);
+    }
+  });
 });
 
 router.get('/students/:cohortID', function(req, res) {
