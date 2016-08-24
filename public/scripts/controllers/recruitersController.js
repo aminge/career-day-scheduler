@@ -9,15 +9,22 @@ myApp.controller('RecruitersController', ['$scope', 'DataFactory', function($sco
       email: $scope.email
     };
 
-    $scope.dataFactory.submitRecruiter(newRecruiter);
+    console.log('In the controller');
 
-    $scope.name = '';
-    $scope.company = '';
-    $scope.email = '';
+    $scope.dataFactory.submitRecruiter(newRecruiter).then(function() {
+
+      console.log('submitted recruiter: ', newRecruiter);
+
+      $scope.dataFactory.getAllRecruiters().then(function() {
+        $scope.recruiters = $scope.dataFactory.recruitersArray();
+        $scope.name = '';
+        $scope.company = '';
+        $scope.email = '';
+      });
+    });
   };
 
   $scope.dataFactory.getAllRecruiters().then(function() {
     $scope.recruiters = $scope.dataFactory.recruitersArray();
   });
-
 }]);

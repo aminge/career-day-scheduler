@@ -19,8 +19,11 @@ myApp.factory('DataFactory', ['$http', function($http) {
   };
 
   var privateGetAllRecruiters = function() {
+    console.log('In the factory. Getting the recuiters');
     var promise = $http.get('/data/recruiters').then(function(response) {
       recruiters = response.data;
+      console.log('Got the recruiters. They are:');
+      console.log(recruiters);
     });
     return promise;
   };
@@ -56,9 +59,11 @@ myApp.factory('DataFactory', ['$http', function($http) {
   };
 
   var privateSubmitRecruiter = function(recruiter) {
+    console.log('In the data factory');
     var promise = $http.put('/data/recruiter', recruiter).then(function(response) {
       // make sure to send back all of the recruiters from the server
       recruiters = response.data;
+      console.log('Got the response back in the data factory. It is:', recruiters);
     });
     return promise;
   };
@@ -97,7 +102,7 @@ myApp.factory('DataFactory', ['$http', function($http) {
     getSchedules: function() {
       return privateGetSchedules();
     },
-    publicGetStudentsFromCohort: function(cohort) {
+    getStudentsFromCohort: function(cohort) {
       return privateGetStudentsFromCohort(cohort);
     },
     recruitersArray: function() {
@@ -106,7 +111,7 @@ myApp.factory('DataFactory', ['$http', function($http) {
     schedulesArray: function() {
       return schedules;
     },
-    publicSetCurrentSchedule: function(schedule) {
+    setCurrentSchedule: function(schedule) {
       return privateSetCurrentSchedule(schedule);
     },
     saveSchedule: function(schedule) {

@@ -50,7 +50,7 @@ router.get('/students', function(req, res) {
   var students = [];
 
   pg.connect(connectionString, function(err, client, done) {
-    var query = client.query('SELECT * FROM goals WHERE cohort = $1', [cohort]);
+    var query = client.query('SELECT * FROM students;');
 
     query.on('row', function(row) {
       students.push(row);
@@ -140,3 +140,4 @@ router.put('/student', function(req, res) {
   });
 });
 
+module.exports = router;
