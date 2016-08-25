@@ -24,6 +24,7 @@ router.get('/cohorts', function(req, res) {
   });
 });
 
+// change recruiters to contacts
 router.get('/recruiters', function(req, res) {
   var recruiters = [];
 
@@ -44,6 +45,7 @@ router.get('/recruiters', function(req, res) {
   });
 });
 
+// This will be modified. There will be a cohorts controller/view
 router.get('/students', function(req, res) {
 
   var cohort = req.body.cohort;
