@@ -44,6 +44,7 @@ router.get('/contacts', function(req, res) {
   });
 });
 
+// This will be modified. There will be a cohorts controller/view
 router.get('/students', function(req, res) {
 
   var cohort = req.body.cohort;
