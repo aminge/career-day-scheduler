@@ -3,7 +3,7 @@ myApp.factory('DataFactory', ['$http', function($http) {
   // PRIVATE
 
   var events = undefined;
-  var recruiters = undefined;
+  var contacts = undefined;
   var students = undefined;
   var cohorts = undefined;
   var schedules = undefined;
@@ -18,12 +18,12 @@ myApp.factory('DataFactory', ['$http', function($http) {
     return promise;
   };
 
-  var privateGetAllRecruiters = function() {
-    console.log('In the factory. Getting the recuiters');
-    var promise = $http.get('/data/recruiters').then(function(response) {
-      recruiters = response.data;
-      console.log('Got the recruiters. They are:');
-      console.log(recruiters);
+  var privateGetAllContacts = function() {
+    console.log('In the factory. Getting the contacts');
+    var promise = $http.get('/data/contacts').then(function(response) {
+      contacts = response.data;
+      console.log('Got the contacts. They are:');
+      console.log(contacts);
     });
     return promise;
   };
@@ -58,19 +58,19 @@ myApp.factory('DataFactory', ['$http', function($http) {
     return promise;
   };
 
-  var privateSubmitRecruiter = function(recruiter) {
+  var privateSubmitContact = function(contact) {
     console.log('In the data factory');
-    var promise = $http.put('/data/recruiter', recruiter).then(function(response) {
-      // make sure to send back all of the recruiters from the server
-      recruiters = response.data;
-      console.log('Got the response back in the data factory. It is:', recruiters);
+    var promise = $http.put('/data/contact', contact).then(function(response) {
+      // make sure to send back all of the contacts from the server
+      contacts = response.data;
+      console.log('Got the response back in the data factory. It is:', contacts);
     });
     return promise;
   };
 
   var privateSaveSchedule = function(schedule) {
     var promise = $http.put('/data/schedule', schedule).then(function(response) {
-      // make sure to send back all of the recruiters from the server
+      // make sure to send back all of the contacts from the server
       schedules = response.data;
     });
     return promise;
@@ -87,8 +87,8 @@ myApp.factory('DataFactory', ['$http', function($http) {
     getAllCohorts: function() {
       return privateGetAllCohorts();
     },
-    getAllRecruiters: function() {
-      return privateGetAllRecruiters()
+    getAllContacts: function() {
+      return privateGetAllContacts()
     },
     getAllStudents: function() {
       return privateGetAllStudents();
@@ -105,8 +105,8 @@ myApp.factory('DataFactory', ['$http', function($http) {
     getStudentsFromCohort: function(cohort) {
       return privateGetStudentsFromCohort(cohort);
     },
-    recruitersArray: function() {
-      return recruiters;
+    contactsArray: function() {
+      return contacts;
     },
     schedulesArray: function() {
       return schedules;
@@ -123,8 +123,8 @@ myApp.factory('DataFactory', ['$http', function($http) {
     submitEvent: function(event) {
       return privateSubmitEvent(event);
     },
-    submitRecruiter: function(recruiter) {
-      return privateSubmitRecruiter(recruiter);
+    submitContact: function(contact) {
+      return privateSubmitContact(contact);
     },
     submitStudent: function(student) {
       return privateSubmitStudent(student);

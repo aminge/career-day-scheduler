@@ -24,19 +24,19 @@ router.get('/cohorts', function(req, res) {
   });
 });
 
-router.get('/recruiters', function(req, res) {
-  var recruiters = [];
+router.get('/contacts', function(req, res) {
+  var contacts = [];
 
   pg.connect(connectionString, function(err, client, done) {
-    var query = client.query('SELECT * FROM recruiters');
+    var query = client.query('SELECT * FROM contacts');
 
     query.on('row', function(row) {
-      recruiters.push(row);
+      contacts.push(row);
       // console.log(row);
     });
     query.on('end', function() {
       done();
-      return res.json(recruiters);
+      return res.json(contacts);
     });
     if(err) {
       console.log(err);
@@ -92,16 +92,16 @@ router.put('/event', function(req, res) {
   });
 });
 
-router.put('/recruiter', function(req, res) {
-  var recruiter = {
+router.put('/contact', function(req, res) {
+  var contact = {
     name: req.name,
     email: req.email,
     company: req.company
   };
 
   pg.connect(connectionString, function(err, client, done) {
-    client.query('INSERT INTO recruiters (name, email, company) VALUES ($1, $2, $3)',
-      [recruiter.name, recruiter.email, recruiter.company],
+    client.query('INSERT INTO contacts (name, email, company) VALUES ($1, $2, $3)',
+      [contact.name, contact.email, contact.company],
       function (err, result) {
         if (err) {
           console.log("Error inserting data: ", err);

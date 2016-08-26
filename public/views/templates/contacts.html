@@ -1,4 +1,4 @@
-<h2>Recruiters</h2>
+<h2>Contacts</h2>
 
 <table>
     <thead>
@@ -9,11 +9,11 @@
       </tr>
     </thead>
 
-    <tbody ng-repeat="recruiter in recruiters">
+    <tbody ng-repeat="contact in contacts">
       <tr>
-        <td>{{recruiter.name}}</td>
-        <td>{{recruiter.company}}</td>
-        <td>{{recruiter.email}}</td>
+        <td>{{contact.name}}</td>
+        <td>{{contact.company}}</td>
+        <td>{{contact.email}}</td>
       </tr>
     </tbody>
 </table>
@@ -26,7 +26,7 @@
     <label for="email">Email:</label>
     <input type="text" ng-model="email" id="email" />
 
-    <button id="add-recruiter" ng-click="addRecruiter()">Add Recruiter</button>
+    <button id="add-contact" ng-click="addContact()">Add Contact</button>
 
 
 </form>

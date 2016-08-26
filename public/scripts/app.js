@@ -3,9 +3,9 @@ var myApp = angular.module('myApp', ['ngRoute']);
 myApp.config(['$routeProvider', function($routeProvider) {
 
   $routeProvider
-    .when('/recruiters', {
-      templateUrl: '/views/templates/recruiters.html',
-      controller: 'RecruitersController'
+    .when('/contacts', {
+      templateUrl: '/views/templates/contacts.html',
+      controller: 'ContactsController'
     })
     .when('/students', {
       templateUrl: '/views/templates/students.html',
