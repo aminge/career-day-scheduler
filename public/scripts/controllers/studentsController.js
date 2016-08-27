@@ -1,6 +1,8 @@
 myApp.controller('StudentsController', ['$scope', 'DataFactory', function($scope, DataFactory) {
 
   $scope.dataFactory = DataFactory;
+  
+  // this controller should be changed to cohorts instead of students
 
   $scope.addStudent = function() {
     var newStudent = {
