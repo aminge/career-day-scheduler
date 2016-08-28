@@ -96,6 +96,9 @@ myApp.factory('DataFactory', ['$http', function($http) {
     cohortsArray: function() {
       return cohorts;
     },
+    getCurrentCohort: function() {
+      return currentCohort;
+    },
     getCurrentSchedule: function() {
       return currentSchedule;
     },

@@ -23,6 +23,14 @@ myApp.config(['$routeProvider', function($routeProvider) {
       templateUrl: '/views/templates/viewSchedule.html',
       controller: 'ViewScheduleController'
     })
+    .when('/viewCohort', {
+      templateUrl: '/views/templates/viewCohort.html',
+      controller: 'ViewCohortController'
+    })
+    .when('/allCohorts', {
+      templateUrl: '/views/templates/allCohorts.html',
+      controller: 'AllCohortsController'
+    })
     .otherwise({
       redirectTo: 'students'
     });
