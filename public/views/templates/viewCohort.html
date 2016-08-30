@@ -1,0 +1,30 @@
+<h2>Cohort: {{cohort}}</h2>
+
+<form>
+    <label for="name">Name:</label>
+    <input type="text" ng-model="name" id="name" />
+    <label for="cohort">Cohort:</label>
+    <input type="text" ng-model="cohort" id="cohort" />
+    <label for="email">Email:</label>
+    <input type="text" ng-model="email" id="email" />
+
+    <button id="add-student" ng-click="addStudent()">Add Student</button>
+
+</form>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Cohort</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody ng-repeat="student in students">
+    <tr>
+        <td>{{student.name}}</td>
+        <td>{{student.cohort}}</td>
+        <td>{{student.email}}</td>
+    </tr>
+    </tbody>
+</table>
