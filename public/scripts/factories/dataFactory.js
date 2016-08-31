@@ -19,11 +19,11 @@ myApp.factory('DataFactory', ['$http', function($http) {
   };
 
   var privateGetAllContacts = function() {
-    console.log('In the factory. Getting the contacts');
+    //console.log('In the factory. Getting the contacts');
     var promise = $http.get('/data/contacts').then(function(response) {
       contacts = response.data;
-      console.log('Got the contacts. They are:');
-      console.log(contacts);
+      //console.log('Got the contacts. They are:');
+      //console.log(contacts);
     });
     return promise;
   };
@@ -40,7 +40,11 @@ myApp.factory('DataFactory', ['$http', function($http) {
   };
 
   var privateGetStudentsFromCohort = function(cohort) {
-
+    currentCohort = cohort;
+    var promise = $http.get('/data/students/' + cohort).then(function(response) {
+      studentsFromCurrentCohort = response.data;
+    });
+    return promise;
   };
 
   var privateSubmitEvent = function(event) {

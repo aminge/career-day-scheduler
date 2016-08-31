@@ -9,12 +9,11 @@ myApp.controller('ContactsController', ['$scope', 'DataFactory', function($scope
       email: $scope.email
     };
 
-    console.log('In the controller');
+    //console.log('In the controller');
 
     $scope.dataFactory.submitContact(newContact).then(function() {
 
-      console.log('submitted contact: ', newContact);
-
+      //console.log('submitted contact: ', newContact);
       $scope.dataFactory.getAllContacts().then(function() {
         $scope.contacts = $scope.dataFactory.contactsArray();
         $scope.name = '';
