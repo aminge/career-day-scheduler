@@ -2,11 +2,12 @@ myApp.factory('DataFactory', ['$http', function($http) {
 
   // PRIVATE
 
-  var events = undefined;
+  var event = undefined;
   var contacts = undefined;
   var students = undefined;
   var cohorts = undefined;
   var schedules = undefined;
+  var schedule = undefined;
   var currentSchedule = undefined;
   var currentCohort = undefined;
   var studentsFromCurrentCohort = undefined;
@@ -35,8 +36,12 @@ myApp.factory('DataFactory', ['$http', function($http) {
     return promise;
   };
 
-  var privateGetSchedules = function() {
-    // should this just get the schedules from a particular cohort?
+  var privateGetSchedules = function(event) {
+    // should this just get the schedules from a particular cohort, or for an event?
+    var promise = $http.get('/data/schedule/' + event.id).then(function(response) {
+      schedule = response.data;
+    });
+    return promise;
   };
 
   var privateGetStudentsFromCohort = function(cohort) {
@@ -49,7 +54,7 @@ myApp.factory('DataFactory', ['$http', function($http) {
 
   var privateSubmitEvent = function(event) {
     var promise = $http.put('/data/event', event).then(function(response) {
-      events = response.data;
+      event = response.data;
     });
     return promise;
   };
