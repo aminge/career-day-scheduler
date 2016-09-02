@@ -69,6 +69,23 @@ router.get('/students', function(req, res) {
 
 router.get('/students/:cohortID', function(req, res) {
   var cohortID = req.params.cohortID;
+
+  pg.connect(connectionString, function(err, client, done) {
+    var query = client.query('SELECT * FROM students WHERE ID = $1;', [cohortID]);
+    // I should compare this with statements in my personal project ot make sure it works correctly
+
+    query.on('row', function(row) {
+      students.push(row);
+      // console.log(row);
+    });
+    query.on('end', function() {
+      done();
+      return res.json(students);
+    });
+    if(err) {
+      console.log(err);
+    }
+  });
 });
 
 router.put('/cohort', function(req, res) {
