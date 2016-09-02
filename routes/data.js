@@ -77,7 +77,7 @@ router.put('/cohort', function(req, res) {
   };
 
   pg.connect(connectionString, function(err, client, done) {
-    clinet.query('INSERT INTO cohorts (name) VALUES ($1)',
+    client.query('INSERT INTO cohorts (name) VALUES ($1)',
     [cohort.name],
     function (err, result) {
       if (err) {
