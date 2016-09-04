@@ -52,6 +52,14 @@ myApp.factory('DataFactory', ['$http', function($http) {
     return promise;
   };
 
+  var privateSubmitCohort = function(cohort) {
+    var promise = $http.put('/data/cohort', cohort).then(function(response) {
+      // I need to make sure that the server is sending back all of the cohorts
+      cohorts = response.data;
+    });
+    return promise;
+  };
+
   var privateSubmitEvent = function(event) {
     var promise = $http.put('/data/event', event).then(function(response) {
       event = response.data;
@@ -131,6 +139,9 @@ myApp.factory('DataFactory', ['$http', function($http) {
     },
     studentsArray: function() {
       return students;
+    },
+    submitCohort: function(cohort) {
+      return privateSubmitCohort(cohort);
     },
     submitEvent: function(event) {
       return privateSubmitEvent(event);
