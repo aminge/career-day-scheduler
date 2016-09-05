@@ -7,10 +7,6 @@ myApp.config(['$routeProvider', function($routeProvider) {
       templateUrl: '/views/templates/contacts.html',
       controller: 'ContactsController'
     })
-    .when('/students', {
-      templateUrl: '/views/templates/students.html',
-      controller: 'StudentsController'
-    })
     .when('/newSchedule', {
       templateUrl: '/views/templates/newSchedule.html',
       controller: 'NewScheduleController'
