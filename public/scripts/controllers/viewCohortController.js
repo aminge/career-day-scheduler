@@ -17,7 +17,7 @@ myApp.controller('ViewCohortController', ['$scope', 'DataFactory', function($sco
   };
 
 
-  $scope.dataFactory.getStudentsFromCohort($scope.dataFactory.getCurrentCohort).then(function() {
+  $scope.dataFactory.getStudentsFromCurrentCohort().then(function() {
     // make sure these are only the students from the current cohort
     $scope.students = $scope.dataFactory.studentsArray();
   });

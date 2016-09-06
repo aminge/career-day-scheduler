@@ -44,12 +44,15 @@ myApp.factory('DataFactory', ['$http', function($http) {
     return promise;
   };
 
-  var privateGetStudentsFromCohort = function(cohort) {
-    currentCohort = cohort;
-    var promise = $http.get('/data/students/' + cohort).then(function(response) {
+  var privateGetStudentsFromCurrentCohort = function() {
+    var promise = $http.get('/data/students/' + currentCohort).then(function(response) {
       studentsFromCurrentCohort = response.data;
     });
     return promise;
+  };
+
+  var privateSetCurrentCohort = function(cohort) {
+    currentCohort = cohort;
   };
 
   var privateSubmitCohort = function(cohort) {
@@ -122,8 +125,8 @@ myApp.factory('DataFactory', ['$http', function($http) {
     getSchedules: function() {
       return privateGetSchedules();
     },
-    getStudentsFromCohort: function(cohort) {
-      return privateGetStudentsFromCohort(cohort);
+    getStudentsFromCurrentCohort: function() {
+      return privateGetStudentsFromCurrentCohort();
     },
     contactsArray: function() {
       return contacts;
@@ -136,6 +139,9 @@ myApp.factory('DataFactory', ['$http', function($http) {
     },
     saveSchedule: function(schedule) {
       return privateSaveSchedule(schedule);
+    },
+    setCurrentCohort: function(cohort) {
+      return privateSetCurrentCohort(cohort);
     },
     studentsArray: function() {
       return students;
