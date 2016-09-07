@@ -16,10 +16,18 @@ myApp.controller('ViewCohortController', ['$scope', 'DataFactory', function($sco
     $scope.email = '';
   };
 
+  // When this page loads, it should just do one function call - a get request through the data factory
+  // That request should get ALL the information for that cohort, including the list of students, the
+  // list of events, and all of the information associated with those events - schedules, etc.
+  // Upon response, the variables will be assigned to the appropriate parts of the response
+  // This will be a lot of work, but I think it's simpler to do it this way than to have a bunch of
+  // different functions being fired off, and having multiple get requests being sent.
+  $scope.cohort = $scope.dataFactory.currentCohort();
 
   $scope.dataFactory.getStudentsFromCurrentCohort().then(function() {
-    // make sure these are only the students from the current cohort
-    $scope.students = $scope.dataFactory.studentsArray();
+    $scope.students = $scope.dataFactory.studentsFromCurrentCohort();
   });
+
+  $scope.events = $scope.cohort.events
 
 }]);

@@ -116,7 +116,7 @@ myApp.factory('DataFactory', ['$http', function($http) {
     cohortsArray: function() {
       return cohorts;
     },
-    getCurrentCohort: function() {
+    currentCohort: function() {
       return currentCohort;
     },
     getCurrentSchedule: function() {
@@ -145,6 +145,9 @@ myApp.factory('DataFactory', ['$http', function($http) {
     },
     studentsArray: function() {
       return students;
+    },
+    studentsFromCurrentCohort: function() {
+      return studentsFromCurrentCohort;
     },
     submitCohort: function(cohort) {
       return privateSubmitCohort(cohort);

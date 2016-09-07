@@ -1,16 +1,6 @@
 <h2>Cohort: {{cohort}}</h2>
 
-<form>
-    <label for="name">Name:</label>
-    <input type="text" ng-model="name" id="name" />
-    <label for="cohort">Cohort:</label>
-    <input type="text" ng-model="cohort" id="cohort" />
-    <label for="email">Email:</label>
-    <input type="text" ng-model="email" id="email" />
-
-    <button id="add-student" ng-click="addStudent()">Add Student</button>
-
-</form>
+<h3>Students</h3>
 
 <table>
     <thead>
@@ -25,6 +15,38 @@
         <td>{{student.name}}</td>
         <td>{{student.cohort}}</td>
         <td>{{student.email}}</td>
+    </tr>
+    </tbody>
+</table>
+
+<h3>Add A Student</h3>
+
+<form>
+    <label for="name">Name:</label>
+    <input type="text" ng-model="name" id="name" />
+    <label for="cohort">Cohort:</label>
+    <input type="text" ng-model="cohort" id="cohort" />
+    <label for="email">Email:</label>
+    <input type="text" ng-model="email" id="email" />
+
+    <button id="add-student" ng-click="addStudent()">Add Student</button>
+</form>
+
+<h3>Events</h3>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Date</th>
+    </tr>
+    </thead>
+    <tbody ng-repeat="event in events">
+    <tr>
+        <td>{{event.name}}</td>
+        <td>{{event.type}}</td>
+        <td>{{event.date}}</td>
     </tr>
     </tbody>
 </table>
