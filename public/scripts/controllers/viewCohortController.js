@@ -22,6 +22,9 @@ myApp.controller('ViewCohortController', ['$scope', 'DataFactory', function($sco
   // Upon response, the variables will be assigned to the appropriate parts of the response
   // This will be a lot of work, but I think it's simpler to do it this way than to have a bunch of
   // different functions being fired off, and having multiple get requests being sent.
+
+  // I also would like to redo the wireframes, and include flow charts with them to show what happens
+  // when the user does various actions (submits a form, etc.)
   $scope.cohort = $scope.dataFactory.currentCohort();
 
   $scope.dataFactory.getStudentsFromCurrentCohort().then(function() {
