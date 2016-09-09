@@ -24,7 +24,10 @@ myApp.controller('ViewCohortController', ['$scope', 'DataFactory', function($sco
   // different functions being fired off, and having multiple get requests being sent.
 
   // I also would like to redo the wireframes, and include flow charts with them to show what happens
-  // when the user does various actions (submits a form, etc.)
+  // when the user does various actions (submits a form, etc.). Each view/controller would have its
+  // own wireframe. Then, for every user action that the view/controller handles, there is a flow
+  // chart describing what functions are called, that goes to the data factory, server, database, and
+  // back
   $scope.cohort = $scope.dataFactory.currentCohort();
 
   $scope.dataFactory.getStudentsFromCurrentCohort().then(function() {
