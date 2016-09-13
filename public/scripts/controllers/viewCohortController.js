@@ -27,7 +27,7 @@ myApp.controller('ViewCohortController', ['$scope', 'DataFactory', function($sco
   // when the user does various actions (submits a form, etc.). Each view/controller would have its
   // own wireframe. Then, for every user action that the view/controller handles, there is a flow
   // chart describing what functions are called, that goes to the data factory, server, database, and
-  // back
+  // back to the server, data factory, and view/controller.
   $scope.cohort = $scope.dataFactory.currentCohort();
 
   $scope.dataFactory.getStudentsFromCurrentCohort().then(function() {
