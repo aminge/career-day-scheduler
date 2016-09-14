@@ -43,5 +43,5 @@ var students = [
       {name: 'Riley Harrison', cohort: 'Kappa', email: 'riley@gmail.com'},
       {name: 'Michelle Wang', cohort: 'Kappa', email: 'michelle@gmail.com'},
       {name: 'Tommy Chester', cohort: 'Kappa', email: 'Tommy Chester@gmail.com'}]
-  },
+  }
 ];
