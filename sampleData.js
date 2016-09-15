@@ -46,7 +46,7 @@ var students = [
   }
 ];
 
-var recruiters = [
+var contacts = [
   {name: 'Adam', company: 'The Nerdery', email: 'adam@gmail.com'},
   {name: 'Bob', company: 'The Nerdery', email: 'bob@gmail.com'},
   {name: 'Christina', company: 'Robert Half', email: 'christina@gmail.com'},
