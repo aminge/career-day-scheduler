@@ -45,3 +45,32 @@ var students = [
       {name: 'Tommy Chester', cohort: 'Kappa', email: 'Tommy Chester@gmail.com'}]
   }
 ];
+
+var recruiters = [
+  {name: 'Adam', company: 'The Nerdery', email: 'adam@gmail.com'},
+  {name: 'Bob', company: 'The Nerdery', email: 'bob@gmail.com'},
+  {name: 'Christina', company: 'Robert Half', email: 'christina@gmail.com'},
+  {name: 'Dave', company: 'Best Buy', email: 'dave@gmail.com'},
+  {name: 'Eva', company: 'Target', email: 'eva@gmail.com'},
+  {name: 'Frank', company: 'Target', email: 'frank@gmail.com'},
+  {name: 'Gale', company: 'SPS Commerce', email: 'gale@gmail.com'},
+  {name: 'Heidi', company: 'Facebook', email: 'heidi@gmail.com'},
+  {name: 'Ingrid', company: 'Yahoo', email: 'ingrid@gmail.com'},
+  {name: 'Joesph', company: 'Amazon', email: 'joseph@gmail.com'},
+  {name: 'Kelly', company: 'Uber', email: 'kelly@gmail.com'},
+  {name: 'Linda', company: 'Apple', email: 'linda@gmail.com'},
+  {name: 'Marcus', company: 'Target', email: 'marcus@gmail.com'},
+  {name: 'Nate', company: 'The Nerdery', email: 'nate@gmail.com'},
+  {name: 'Olivia', company: 'Digital People', email: 'olivia@gmail.com'},
+  {name: 'Peter', company: 'Digital People', email: 'peter@gmail.com'},
+  {name: 'Quinn', company: 'Microsoft', email: 'quinn@gmail.com'},
+  {name: 'Robert', company: 'UnitedHealth Group', email: 'robert@gmail.com'},
+  {name: 'Samantha', company: 'Best Buy', email: 'samantha@gmail.com'},
+  {name: 'Ted', company: '3M', email: 'ted@gmail.com'},
+  {name: 'Ulga', company: 'General Mills', email: 'ulga@gmail.com'},
+  {name: 'Veronica', company: 'C. H. Robinson', email: 'veronica@gmail.com'},
+  {name: 'Wanda', company: 'Wells Fargo', email: 'wanda@gmail.com'},
+  {name: 'Xerxes', company: 'Aquent', email: 'xerxes@gmail.com'},
+  {name: 'Yolanda', company: 'Empulse', email: 'yolanda@gmail.com'},
+  {name: 'Zeus', company: 'Google', email: 'zeus@gmail.com'}
+];
