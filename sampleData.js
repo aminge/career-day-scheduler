@@ -1,3 +1,6 @@
+// I think I need to start making this more object-oriented. Have classes for
+// student, contact, event, schedule, and cohort
+
 var students = [
   {
     name: 'Iota',
@@ -74,3 +77,15 @@ var contacts = [
   {name: 'Yolanda', company: 'Empulse', email: 'yolanda@gmail.com'},
   {name: 'Zeus', company: 'Google', email: 'zeus@gmail.com'}
 ];
+
+var sampleSchedule = {
+  time1: {'contact1': 'student1', 'contact2': 'student2'},
+  time2: {'contact1': 'student2', 'contact2': 'student1'},
+  time3: {},
+  time4: {},
+  time5: {},
+  time6: {},
+  time7: {},
+  time8: {},
+  time9: {}
+};
