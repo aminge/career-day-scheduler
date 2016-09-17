@@ -79,13 +79,28 @@ var contacts = [
 ];
 
 var sampleSchedule = {
-  time1: {'contact1': 'student1', 'contact2': 'student2'},
-  time2: {'contact1': 'student2', 'contact2': 'student1'},
-  time3: {},
-  time4: {},
-  time5: {},
-  time6: {},
-  time7: {},
-  time8: {},
-  time9: {}
+  'time1': {'contact1': 'student1', 'contact2': 'student2'},
+  'time2': {'contact1': 'student2', 'contact2': 'student1'},
+  'time3': {},
+  'time4': {},
+  'time5': {},
+  'time6': {},
+  'time7': {},
+  'time8': {},
+  'time9': {}
+};
+
+var sampleCohort = {
+  name: 'Iota'
+};
+
+var sampleEvent = {
+  name: 'Iota Mock Interviews',
+  cohort: sampleCohort,
+  date: '3/10/2016',
+  startTime: '1:00pm',
+  interviewLength: 15,
+  breakLength: 5,
+  numInterviews: 9,
+  schedule: sampleSchedule
 };
