@@ -102,5 +102,15 @@ var sampleEvent = {
   interviewLength: 15,
   breakLength: 5,
   numInterviews: 9,
-  schedule: sampleSchedule
+  schedule: sampleSchedule,
+  checkValidSchedule: function(schedule) {
+    // checks to see if the schedule is valid. Returns false if it isn't, and
+    // true if it is
+  },
+  generateNewSchedule: function() {
+    // makes a new schedule
+  },
+  saveSchedule: function(schedule) {
+    this.schedule = schedule;
+  }
 };
