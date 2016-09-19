@@ -106,6 +106,14 @@ var sampleEvent = {
   checkValidSchedule: function(schedule) {
     // checks to see if the schedule is valid. Returns false if it isn't, and
     // true if it is
+
+    // iterate through times
+      // initialize list
+      // if a student appears twice
+        // return false
+      // else
+        // add that student to the list
+    // return true
   },
   generateNewSchedule: function() {
     // makes a new schedule
