@@ -1,5 +1,15 @@
 <h2>Cohorts</h2>
 
+<h3>Add a New Cohort</h3>
+
+<form>
+    <label for="name">Name:</label>
+    <input type="text" ng-model="name" id="name" />
+
+    <button id="add-cohort" ng-click="addCohort()">Add Cohort</button>
+
+</form>
+
 <table>
     <thead>
     <tr>
@@ -10,7 +20,14 @@
     <tbody ng-repeat="cohort in cohorts">
     <tr>
         <td>{{cohort.name}}</td>
-        buttons to edit, delete, and create an event for this cohort
+        <td><button>Edit</button></td>
+        <td><button>Delete</button></td>
+        <td><button>Create Event</button></td>
+        <!--These buttons need to be dynamically generated, but they also need to have an-->
+        <!--id that ties them to the correct cohort-->
     </tr>
     </tbody>
 </table>
+
+
+
