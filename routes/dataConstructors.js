@@ -19,7 +19,8 @@ var Contact = function(id, name, company, email) {
   this.email = email;
 };
 
-var Event = function(id, name, date, startTime, interviewLength, breakLength, numInterviews, cohort) {
+var Event = function(id, name, date, startTime, interviewLength, breakLength,
+  numInterviews, cohort) {
   this.id = id;
   this.name = name;
   this.date = date;
@@ -41,8 +42,9 @@ var Schedule = function(id, event) {
   this.eventID = event.id;
   this.eventName = event.name;
   this.checkValid = function() {
-    // checks the instance of schedule to make sure it's valid, i.e., no students or contacts
-    // have more than 1 interview at a time, and that the students all have the same number
-    // of interviews. This might be better as a prototype
+    // checks the instance of schedule to make sure it's valid, i.e., no
+    // students or contacts have more than 1 interview at a time, and that the
+    // students all have the same number of interviews. This might be better as
+    // a prototype
   };
 };
