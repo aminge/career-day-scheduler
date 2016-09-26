@@ -49,10 +49,17 @@ var Schedule = function(id, event) {
   this.id = id;
   this.eventID = event.id;
   this.eventName = event.name;
+  this.startTime = event.startTime;
+  this.numInterviews = event.numInterviews;
+  this.students = event.students;
+  this.contacts = event.contacts;
   this.checkValid = function() {
     // checks the instance of schedule to make sure it's valid, i.e., no
     // students or contacts have more than 1 interview at a time, and that the
     // students all have the same number of interviews. This might be better as
     // a prototype
+
+    // or maybe I should just make all this schedule stuff part of the event
+    // object/constructor
   };
 };
