@@ -32,16 +32,17 @@ var Event = function(id, name, date, startTime, interviewLength, breakLength,
   this.cohortName = cohort.name;
   this.contacts = [];
   this.inactiveContacts = {}
-  // this.inactiveContacts will take the form of {'contact1': [time1,
-  //                                                           time2],
-  //                                              'contact6': [time7,
-  //                                                           time8,
-  //                                                           time9]}
+  // this.inactiveContacts will take the form of
+  // {'contact1': [time1, time2], 'contact6': [time7, time8, time9]}
   // if a contact is active for all of the times, they will not appear in
   // this.inactiveContacts
   this.schedule = undefined;
   this.makeNewSchedule = function() {
     // makes a schedule and returns it
+  };
+  this.saveSchedule = function(schedule) {
+    this.schedule = schedule;
+    // Not sure if this is the right syntax. Maybe it needs to be a prototype.
   };
 };
 
