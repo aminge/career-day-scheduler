@@ -1,4 +1,4 @@
-myApp.controller('ViewScheduleController', ['$scope', 'DataFactory', function($scope, DataFactory) {
+myApp.controller('ViewEventController', ['$scope', 'DataFactory', function($scope, DataFactory) {
 
   $scope.dataFactory = DataFactory;
 

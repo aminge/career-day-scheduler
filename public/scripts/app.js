@@ -15,9 +15,9 @@ myApp.config(['$routeProvider', function($routeProvider) {
       templateUrl: '/views/templates/savedSchedules.html',
       controller: 'SavedSchedulesController'
     })
-    .when('/viewSchedule', {
-      templateUrl: '/views/templates/viewSchedule.html',
-      controller: 'ViewScheduleController'
+    .when('/viewEvent', {
+      templateUrl: '/views/templates/viewEvent.html',
+      controller: 'ViewEventController'
     })
     .when('/viewCohort', {
       templateUrl: '/views/templates/viewCohort.html',
