@@ -2,6 +2,6 @@ myApp.controller('ViewEventController', ['$scope', 'DataFactory', function($scop
 
   $scope.dataFactory = DataFactory;
 
-  $scope.currentSchedule = $scope.dataFactory.getCurrentSchedule();
+  $scope.currentEvent = $scope.dataFactory.getCurrentEvent();
 
 }]);

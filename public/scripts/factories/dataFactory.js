@@ -9,6 +9,7 @@ myApp.factory('DataFactory', ['$http', function($http) {
   var schedules = undefined;
   var schedule = undefined;
   var currentSchedule = undefined;
+  var currentEvent = undefined;
   var currentCohort = undefined;
   var studentsFromCurrentCohort = undefined;
 
