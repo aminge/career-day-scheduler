@@ -30,6 +30,7 @@ var Event = function(id, name, date, startTime, interviewLength, breakLength,
   this.numInterviews = numInterviews;
   this.cohortID = cohort.id;
   this.cohortName = cohort.name;
+  this.students = [];
   this.contacts = [];
   this.inactiveContacts = {}
   // this.inactiveContacts will take the form of
@@ -59,6 +60,7 @@ var Schedule = function(id, event) {
     // students or contacts have more than 1 interview at a time, and that the
     // students all have the same number of interviews. This might be better as
     // a prototype
+
 
     // or maybe I should just make all this schedule stuff part of the event
     // object/constructor
